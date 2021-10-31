@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Register Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+  <style>
+    body{
+
+      background-image: url("https://w0.peakpx.com/wallpaper/822/656/HD-wallpaper-happy-birtay-pink-birtay-cake-pastry-candle-1-year-concepts-cake-on-pink-background.jpg");
+      background-size: 110%;
+    }
+</style>
+</head>
+<body>
+
+  <script>
+    
+    function validateForm(){  
+    var fname=document.myForm.fname.value; 
+    var lname= document.myForm.lname.value; 
+    var email = document.myForm.email.value;
+    var password=document.myForm.psw.value;
+    var password1=document.myForm.psw1.value;
+    var atposition=email.indexOf("@");  
+    var dotposition=email.lastIndexOf(".");  
+
+    if (fname==null || fname==""){  
+  alert("First Name can't be blank"); 
+  return false;  
+    }
+    else if (lname==null || lname==""){  
+  alert("Last Name can't be blank"); 
+  return false;  
+    }
+
+   else if (atposition<1 || dotposition<atposition+2 || dotposition+2>=email.length){     
+  alert("Please enter a valid e-mail address"); 
+  return false;  
+  }  
+
+  else if(password.length<6){  
+  alert("Password must be at least 6 characters long.");  
+  return false;  
+  }  
+
+  else{
+    if(password==password1){
+return true;
+}
+else{
+alert("Passwords must be same!");
+return false;
+}
+  }
+}
+  </script>
+    <a href="Foodmain.html" class="btn btn-info btn-lg">
+        <span class="glyphicon glyphicon-chevron-left"></span> Main
+      </a>
+<br><br>
+
+<div class="container bg-light text-dark" style="width:350px;padding-left:60px;margin-top:5px; border-radius: 10px;" >
+    <h3 style="padding-right:8%;color:darkcyan;font-style: oblique;"><i>Welcome to our page!</i></h3><br>
+
+<form name="myForm" method="post" onsubmit="return validateForm()" action="/action_page.php">
+
+    <input type="text" placeholder="Enter Firstname" name="fname">
+    <br><br>
+    <input type="text" placeholder="Enter Lastname" name="lname">
+    <br><br>
+    <input type="text" placeholder="Enter email" name="email" ><br><br>
+
+    <input type="password" placeholder="Enter Password" name="psw" ><br><br>
+
+    <input type="text" placeholder="Confirm Password" name="psw1" ><br><br>
+
+    <label>
+        <input type="checkbox"  name="remember"> Agree with Terms & Conditions
+      </label>
+      <br><br>
+
+
+      <input type="submit" value="Register" name="Submit" class="btn btn-success"style="padding-left:30%; padding-right:30%; background-image: linear-gradient(to right, rgb(60, 121, 156) , rgb(123, 74, 136));">
+      <br/><br/>
+      
+      <p>Already registered? <a href="Foodlogin.html">Login</a></p>
+
+      </form>
+      </div>
+      </body>
+      </html>
